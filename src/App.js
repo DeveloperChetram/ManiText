@@ -20,7 +20,7 @@
 
       return (
       <>
-   <Main title='ChangeText' button="Uppercase" heading='Enter your text to make changes' mode={mode}   toggle={toggle} />
+   <Main title='ManiText' button="Uppercase" heading='Enter your text to make changes' mode={mode}   toggle={toggle} />
         {/* <About/> */}
       </>
       );
