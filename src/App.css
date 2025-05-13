@@ -248,3 +248,352 @@ margin-top: -10px;
   background-color: #3e8e41;
   transform: scale(0.95);
 }
+
+/* General body styles for smooth transitions and base colors */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode base */
+.light-mode {
+  background-color: #f4f7f9; /* Lighter grey for background */
+  color: #333;
+}
+
+/* Dark mode base */
+.dark-mode {
+  background-color: #1a1d24; /* Darker, slightly blueish background */
+  color: #e0e0e0; /* Off-white text */
+}
+
+.main {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navbar Styles */
+.custom-navbar {
+  padding: 15px 30px; /* Increased padding */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid transparent; /* Prepare for themed border */
+}
+
+.light-mode .custom-navbar {
+  background-color: #ffffff;
+  border-bottom-color: #e0e0e0;
+}
+
+.dark-mode .custom-navbar {
+  background-color: #252a33; /* Slightly lighter than body for depth */
+  border-bottom-color: #3a3f4a;
+}
+
+.navbar-brand {
+  font-size: 1.75rem; /* Slightly larger */
+  font-weight: 600; /* Semi-bold */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.light-mode .navbar-brand {
+  color: #007bff;
+}
+.dark-mode .navbar-brand {
+  color: #3498db; /* Brighter blue for dark mode */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px; /* Increased gap */
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative; /* For pseudo-element underline */
+}
+
+.light-mode .nav-link {
+  color: #555;
+}
+.dark-mode .nav-link {
+  color: #bbb;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+.light-mode .nav-link:hover {
+ color: #0056b3;
+}
+.dark-mode .nav-link:hover {
+  color: #ffffff;
+}
+
+/* Switch styles remain largely the same but ensure colors fit the theme */
+.slider {
+  background-color: #ccc; /* Default for light mode */
+  /* ... other slider styles ... */
+}
+.dark-mode .slider {
+  background-color: #555; /* Darker slider background */
+}
+
+.dark-mode input:checked + .slider {
+  background-color: #3498db; /* Theme-consistent blue */
+}
+.dark-mode .slider:before {
+  background-color: #252a33; /* Slider button color in dark mode */
+}
+.light-mode .slider:before {
+  background-color: white; /* Slider button color in light mode */
+}
+
+
+/* Form Container Styles */
+.custom-container {
+  padding: 30px; /* Increased padding */
+  margin: 30px auto;
+  max-width: 600px; /* Slightly wider */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer, more diffused shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light-mode .custom-container {
+  background-color: #ffffff;
+}
+.dark-mode .custom-container {
+  background-color: #252a33;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-heading {
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600; /* Semi-bold */
+  font-size: 1.8rem; /* Larger heading */
+}
+.light-mode .custom-heading {
+  color: #333;
+}
+.dark-mode .custom-heading {
+  color: #e0e0e0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500; /* Medium weight */
+}
+.light-mode .form-label {
+  color: #444;
+}
+.dark-mode .form-label {
+  color: #ccc;
+}
+
+.form-input {
+  resize: vertical;
+  width: calc(100% - 24px); /* Adjust width considering padding */
+  padding: 12px;
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 8px; /* More rounded */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+
+.light-mode .form-input {
+  background-color: #fff;
+  color: #333;
+  border-color: #d1d9e0;
+}
+.dark-mode .form-input {
+  background-color: #303640;
+  color: #e0e0e0;
+  border-color: #4a505a;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Softer focus ring */
+}
+.light-mode .form-input:focus {
+  border-color: #007bff;
+}
+.dark-mode .form-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+/* Button Styles */
+.button-container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  margin-bottom: 20px; /* Space below buttons */
+}
+
+.form-button {
+  padding: 10px 20px; /* Adjusted padding */
+  border: none;
+  border-radius: 8px; /* More rounded */
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.form-button:hover {
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-button:active {
+  transform: translateY(0px) scale(0.98); /* Press effect */
+  box-shadow: none;
+}
+
+/* Light mode buttons */
+.light-mode .form-button {
+  background-color: #007bff;
+  color: #fff;
+}
+.light-mode .form-button:hover {
+  background-color: #0056b3;
+}
+.light-mode .form-button.clear {
+  background-color: #dc3545;
+}
+.light-mode .form-button.clear:hover {
+  background-color: #c82333;
+}
+
+/* Dark mode buttons */
+.dark-mode .form-button {
+  background-color: #3498db;
+  color: #fff;
+}
+.dark-mode .form-button:hover {
+  background-color: #2980b9;
+}
+.dark-mode .form-button.clear {
+  background-color: #e74c3c;
+}
+.dark-mode .form-button.clear:hover {
+  background-color: #c0392b;
+}
+
+
+/* Count and Preview Styles */
+.count, .preview {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.light-mode .count, .light-mode .preview {
+  background-color: #f8f9fa; /* Very light grey for sections */
+}
+.dark-mode .count, .dark-mode .preview {
+  background-color: #2c313a; /* Darker section background */
+}
+
+.count span, .preview h2, .preview p {
+  transition: color 0.3s ease;
+}
+
+.count h2 { /* Target h2 within span if that's the structure */
+  display: inline;
+  font-size: 1.1rem; /* Adjusted size */
+  margin: 0 3px;
+  font-weight: 600;
+}
+.light-mode .count h2 {
+  color: #007bff;
+}
+.dark-mode .count h2 {
+  color: #3498db;
+}
+
+.preview h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.preview p {
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 50px; /* Ensure some space even if text is empty */
+  word-wrap: break-word;
+}
+
+/* Accordion styles from previous context - ensure they also respect dark/light mode */
+/* ... (Keep existing .accordion styles, but ensure their colors are themed) ... */
+
+.light-mode .accordion-item {
+  border: 1px solid #ddd;
+}
+.dark-mode .accordion-item {
+  border: 1px solid #4a505a;
+}
+
+.light-mode .accordion-title {
+  background-color: #f7f7f7;
+  color: #333;
+}
+.dark-mode .accordion-title {
+  background-color: #303640;
+  color: #e0e0e0;
+}
+
+.light-mode .accordion-title.active, .light-mode .accordion-title:hover {
+  background-color: #e9ecef;
+}
+.dark-mode .accordion-title.active, .dark-mode .accordion-title:hover {
+  background-color: #3a3f4a;
+}
+
+.light-mode .accordion-content {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  color: #333;
+}
+.dark-mode .accordion-content {
+  background-color: #252a33;
+  border-top: 1px solid #4a505a;
+  color: #e0e0e0;
+}
+
+/* Mode button in About.jsx if it's still used */
+.light-mode .mode-button {
+  background-color: #28a745; /* Green for light mode */
+  color: white;
+}
+.dark-mode .mode-button {
+  background-color: #218838; /* Darker green for dark mode */
+  color: white;
+}
